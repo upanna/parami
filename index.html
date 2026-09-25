@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PARAMI ENGLISH CLASS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        :root { --navy: #002347; --red: #ed1c24; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Pyidaungsu', 'Inter', sans-serif; background: #fff; margin: 0; }
+
+        .hero { 
+            position: relative;
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.1)), url('uploads/image1.jpg');
+            background-size: cover; background-position: center; height: 400px;
+            display: flex; align-items: center; color: white; overflow: hidden;
+        }
+
+        .brand-box { position: absolute; top: 40px; left: 40px; display: flex; align-items: center; z-index: 20; }
+        .hero-logo { width: 75px; height: 75px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-right: 20px; }
+        .hero-title { font-size: 1.8rem; font-weight: 900; text-transform: uppercase; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); margin: 0; color: #ffffff; }
+
+        .navbar { background: var(--navy); padding: 5px 0; border-bottom: 5px solid var(--red); box-shadow: 0 5px 20px rgba(0,0,0,0.3); margin-top: -2px; }
+        .nav-link { color: #fff !important; font-weight: bold; text-transform: uppercase; padding: 12px 20px !important; font-size: 0.9rem; transition: 0.3s; cursor: pointer; }
+        .nav-link:hover { background: var(--red); border-radius: 5px; }
+
+        .section-title { font-weight: 800; border-left: 6px solid var(--red); padding-left: 15px; color: var(--navy); margin-bottom: 30px; }
+        .principal-img { width: 120px; height: 120px; border-radius: 50%; border: 4px solid var(--red); object-fit: cover; }
+        
+        #admission, #contact { display: none; margin-top: 25px; animation: slideDown 0.4s ease-out; }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .transition-card { transition: 0.3s; }
+        .transition-card:hover { transform: translateY(-5px); }
+
+        footer { background: var(--navy); color: white; padding: 50px 0; margin-top: 50px; }
+    </style>
+</head>
+<body id="home">
+
+<section class="hero">
+    <div class="brand-box">
+        <img src="uploads/logo.jpg" class="hero-logo" onerror="this.src='https://via.placeholder.com/75'">
+        <h1 class="hero-title">PARAMI ENGLISH CLASS</h1>
+    </div>
+    <div class="container">
+        <div class="col-md-8">
+            <h2 class="display-3 fw-bold mb-2">Build Your Future</h2>
+            <p class="fs-4 fw-light opacity-90">Expert English Training for a Better Life.</p>
+        </div>
+    </div>
+</section>
+
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <div class="navbar-nav text-center">
+                <a class="nav-link" href="#home">Home</a>
+                <a class="nav-link" href="#about">About Us</a>
+                <a class="nav-link" href="#courses">Courses</a>
+                <a class="nav-link" onclick="toggleSection('admission')">Admission</a>
+                <a class="nav-link" onclick="toggleSection('contact')">Contact</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container py-5">
+    <div class="row g-5">
+        <div class="col-lg-8">
+            <div id="courses" class="mb-5">
+                <h3 class="section-title">OUR COURSES</h3>
+                <div class="row g-4" id="course-list">
+                    <!-- JavaScript မှတစ်ဆင့် Course များကို ရေးဆွဲပေးမည် -->
+                </div>
+            </div>
+            
+            <div id="about" class="mb-5">
+                <h3 class="section-title">ABOUT OUR CLASS</h3>
+                <div id="about-text" class="text-muted" style="white-space: pre-line; line-height: 1.9; font-size: 1.05rem;">
+                    <!-- About Us စာသား ဤနေရာတွင် ပေါ်မည် -->
+                </div>
+            </div>
+
+            <div id="admission" class="p-4 p-md-5 rounded-5 border bg-light shadow-sm mb-4">
+                <h3 class="fw-bold mb-4 text-navy text-center">ENROLLMENT FORM</h3>
+                <form id="enrollForm">
+                    <div class="row g-3">
+                        <div class="col-md-6"><input type="text" id="enroll_name" class="form-control rounded-pill p-3 border-0 shadow-sm" placeholder="အမည်" required></div>
+                        <div class="col-md-6"><input type="tel" id="enroll_phone" class="form-control rounded-pill p-3 border-0 shadow-sm" placeholder="ဖုန်း" required></div>
+                        <div class="col-12"><input type="text" id="enroll_address" class="form-control rounded-pill p-3 border-0 shadow-sm" placeholder="သင်တန်း/လိပ်စာ" required></div>
+                        <div class="col-12"><button type="submit" class="btn btn-danger w-100 py-3 rounded-pill fw-bold shadow">SUBMIT APPLICATION</button></div>
+                    </div>
+                </form>
+            </div>
+
+            <div id="contact" class="p-4 p-md-5 rounded-5 border bg-white shadow-sm mb-4">
+                <h3 class="fw-bold mb-4 text-navy text-center">GET IN TOUCH</h3>
+                <form id="contactForm">
+                    <div class="row g-3">
+                        <div class="col-12"><input type="text" id="contact_name" class="form-control rounded-pill p-3 bg-light border-0 shadow-sm" placeholder="သင့်အမည်" required></div>
+                        <div class="col-12"><textarea id="contact_message" class="form-control rounded-4 p-3 bg-light border-0 shadow-sm" rows="4" placeholder="စာတိုပေးပို့ရန်" required></textarea></div>
+                        <div class="col-12"><button type="submit" class="btn btn-danger w-100 py-3 rounded-pill fw-bold shadow">SEND MESSAGE</button></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="row g-2 mb-4">
+                <div class="col-6">
+                    <img src="uploads/image2.jpg" class="img-fluid rounded-4 shadow-sm" style="height: 130px; width: 100%; object-fit: cover;" onerror="this.src='https://via.placeholder.com/400x300'">
+                </div>
+                <div class="col-6">
+                    <img src="uploads/image3.jpg" class="img-fluid rounded-4 shadow-sm" style="height: 130px; width: 100%; object-fit: cover;" onerror="this.src='https://via.placeholder.com/400x300'">
+                </div>
+            </div>
+
+            <div class="card border-0 shadow-sm rounded-4 text-center p-4 mb-4">
+                <h5 class="fw-bold mb-4 text-navy border-bottom pb-2">Head of Faculty</h5>
+                <img src="uploads/sayardaw.jpg" class="principal-img mx-auto mb-3" onerror="this.src='https://via.placeholder.com/120'">
+                <h6 class="fw-bold m-0" id="principal-name">Principal Name</h6>
+                <small class="text-danger fw-bold">PRINCIPAL</small>
+            </div>
+
+            <div class="p-4 rounded-4 text-white mb-4 shadow-lg" style="background: var(--navy);">
+                <h5 class="fw-bold mb-4 border-bottom border-secondary pb-2"><i class="bi bi-camera-video me-2"></i> Zoom Online Class</h5>
+                <div class="mb-3"><small class="opacity-50">Zoom ID</small><h5 class="fw-bold m-0" id="zoom-id">-</h5></div>
+                <div class="mb-4"><small class="opacity-50">Passcode</small><h5 class="fw-bold m-0" id="zoom-pass">-</h5></div>
+                <a id="zoom-link" href="live.html" class="btn btn-danger w-100 rounded-pill fw-bold py-2 shadow">JOIN NOW</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container text-center">
+        <h5 class="fw-bold text-uppercase">PARAMI ENGLISH CLASS</h5>
+        <p class="small opacity-50 mt-4">© 2026 All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+// Static Data (Database အစား ပြသရန်)
+const websiteData = {
+    about: "Parami English Class မှ ကြိုဆိုပါတယ်။ ကျွန်ုပ်တို့ သင်တန်းတွင် အခြေခံမှစ၍ အဆင့်မြင့် ထိထိရောက်ရောက် သင်ကြားပေးနေပါသည်။",
+    principal: "Sayardaw / Head Teacher",
+    zoom: {
+        id: "123 456 7890",
+        pass: "12345",
+        link: "live.html"
+    },
+    courses: [
+        { name: "Basic English Course", desc: "အခြေခံ အင်္ဂလိပ်စာ သဒ္ဒါနှင့် ပြောဆိုမှုများ", price: "50,000 MMK" },
+        { name: "Intermediate Speaking", desc: "ကျွမ်းကျင်စွာ ပြောဆိုနိုင်ရန် လေ့ကျင့်ပေးသော သင်တန်း", price: "80,000 MMK" }
+    ]
+};
+
+// Data များကို Web Page တွင် Render လုပ်ခြင်း
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("about-text").innerText = websiteData.about;
+    document.getElementById("principal-name").innerText = websiteData.principal;
+    document.getElementById("zoom-id").innerText = websiteData.zoom.id;
+    document.getElementById("zoom-pass").innerText = websiteData.zoom.pass;
+    
+    const courseContainer = document.getElementById("course-list");
+    websiteData.courses.forEach(course => {
+        courseContainer.innerHTML += `
+            <div class="col-md-6">
+                <div class="card border-0 shadow-sm rounded-4 h-100 p-4 transition-card">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-danger-subtle p-2 rounded-3 me-3">
+                            <i class="bi bi-mortarboard-fill fs-3 text-danger"></i>
+                        </div>
+                        <h5 class="fw-bold m-0">${course.name}</h5>
+                    </div>
+                    <div class="text-muted small mb-3" style="font-size: 0.85rem; line-height: 1.6;">
+                        <i class="bi bi-info-circle me-1"></i> ${course.desc}
+                    </div>
+                    <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center">
+                        <div>
+                            <small class="text-muted d-block" style="font-size: 0.7rem;">Course Fee</small>
+                            <span class="fw-bold text-danger fs-5">${course.price}</span>
+                        </div>
+                        <button class="btn btn-danger btn-sm rounded-pill px-3 fw-bold" onclick="toggleSection('admission')">JOIN</button>
+                    </div>
+                </div>
+            </div>`;
+    });
+});
+
+// Toggle Function
+function toggleSection(id) {
+    var admission = document.getElementById('admission');
+    var contact = document.getElementById('contact');
+    if(id !== 'admission') admission.style.display = "none";
+    if(id !== 'contact') contact.style.display = "none";
+
+    var section = document.getElementById(id);
+    if (section.style.display === "block") {
+        section.style.display = "none";
+    } else {
+        section.style.display = "block";
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+// Form Submission Event
+document.getElementById('enrollForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Enrollment Form Submitted Successfully!');
+});
+
+document.getElementById('contactForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Message Sent Successfully!');
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
